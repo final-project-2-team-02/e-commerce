@@ -617,3 +617,18 @@ a {
   height: fit-content;
   color: #141f00;
 }
+.kosong {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 80px);
+  margin-top: 80px;
+  display: flex;
+  /* background-color: #171e0a; */
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.kosong img {
+  height: 60vh;
+  width: auto;
+}

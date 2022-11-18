@@ -14,13 +14,14 @@ export const Tampil = () => {
     const pindah = () => {
         navi('/admin')
     }
-    // useEffect(() => {
-    //     if (localStorage.getItem('token') === "iniadmin") {
-    //         pindah()
-    //     }
-    // })
+    useEffect(() => {
+        if (localStorage.getItem('token') === "iniadmin") {
+            pindah()
+        }
+    })
     if (localStorage.getItem('token') === "iniadmin") {
-        <h1>kamu admin</h1>
+        // pindah()
+        return <>kamu admin</>
     } else {
 
         return (
