@@ -6,13 +6,13 @@ import { Link, useNavigate } from "react-router-dom";
 export const Header = () => {
   const isFill = localStorage.getItem("token");
   const navi = useNavigate();
-  // const { userLogin } = useSelector((state) => state.persistedReducer.data)
+
   return (
-    <div class="header">
+    <div className="header">
       <Link to="/">
         <h3>Tokopakedi</h3>
       </Link>
-      <div class="searching">
+      <div className="searching">
         <input type="text" name="" id="" />
         <img
           alt="key"
@@ -20,7 +20,7 @@ export const Header = () => {
         />
       </div>
       {isFill ? (
-        <div class="dia">
+        <div className="dia">
           <img
             alt="kamu"
             onClick={() => navi("/cart")}
@@ -32,7 +32,7 @@ export const Header = () => {
         </div>
       ) : (
         <Link to="/login">
-          <div class="fitur">masuk</div>
+          <div className="fitur">masuk</div>
         </Link>
       )}
     </div>

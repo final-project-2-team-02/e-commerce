@@ -5,6 +5,7 @@ export const Headermin = () => {
     const navi = useNavigate()
     const logot = () => {
         localStorage.removeItem('token')
+        localStorage.removeItem('role')
         navi('/')
     }
     return (
