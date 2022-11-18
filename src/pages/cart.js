@@ -28,9 +28,8 @@ export const Cart = () => {
               onClick={chek}
               style={{
                 float: "right",
-                backgroundColor: "blue",
+                backgroundColor: "#b6f719",
                 padding: "0.7rem 1.5rem",
-                color: "white",
                 fontWeight: "bold",
                 borderRadius: "5px",
               }}
