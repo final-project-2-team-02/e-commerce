@@ -8,7 +8,7 @@ import { CobaAdmin } from "./pages/cobaAdmin";
 import { Detail } from "./pages/detail";
 import { Login } from "./pages/login";
 import { Nampil } from "./pages/nampilin";
-import { Recap } from "./pages/recap";
+import { Recap } from "./pages/recap/recap";
 import './style/style.css'
 
 function App() {
