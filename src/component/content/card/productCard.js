@@ -16,7 +16,6 @@ export const ProductCard = ({ data }) => {
   };
   const cart = () => {
     if (localStorage.getItem("token")) {
-      console.log(data.val.id);
       dispach(addCart(data.val.id));
     } else {
       navi("/login");

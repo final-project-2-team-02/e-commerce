@@ -23,7 +23,13 @@ export const Cart = () => {
           {product.map((data, ind) =>
             data.cart > 0 ? <Listnya key={ind} data={data} /> : null
           )}
-          <div style={{ width: "100%", padding: "1rem 3rem" }}>
+          <div
+            style={{
+              width: "100%",
+              padding: "1rem 3rem",
+              marginBottom: "5rem",
+            }}
+          >
             <div
               onClick={chek}
               style={{
