@@ -1,0 +1,35 @@
+.recap-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10rem;
+  width: 100vw;
+  row-gap: 2rem;
+  padding: 0 5rem;
+  border: none;
+}
+
+.recap-container table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.recap-container td  img {
+  width: 100px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.recap-container td, th {
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+.recap-container tr {
+  border-bottom: solid rgb(197, 197, 197) 1px;
+}
+
+.recap-container tr:nth-child(even) {
+  background-color: #fcfcfc;
+}

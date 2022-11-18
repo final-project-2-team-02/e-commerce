@@ -1,35 +1,45 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { List } from '../component/admin/list/list'
-import { useDispatch } from 'react-redux'
-import { Listnya } from '../component/content/list/list'
-import { addRecap } from '../redux/ecom'
+import React from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Listnya } from "../component/content/list/list";
+import { addRecap } from "../redux/ecom";
 
 export const Cart = () => {
-    const dispach = useDispatch()
-    const { product } = useSelector((state) => state.persistedReducer.ecom)
+  const dispach = useDispatch();
+  const { product } = useSelector((state) => state.persistedReducer.ecom);
 
-    const kamu = product.filter((nilai) => {
-        return nilai.cart > 0
-    })
-    const chek = () => {
-        dispach(addRecap())
-    }
-    return (
-        <div>
-            {kamu.length === 0
-                ?
-                <p>Kosong</p>
-                :
-                <>
-                    {product.map((data, ind) => {
-                        if (data.cart > 0) {
-                            return <Listnya key={ind} data={data} />
-                        }
-                    })}
-                    <div onClick={chek}>Checkout</div>
-                </>}
-
-        </div>
-    )
-}
+  const kamu = product.filter((nilai) => {
+    return nilai.cart > 0;
+  });
+  const chek = () => {
+    dispach(addRecap());
+  };
+  return (
+    <div>
+      {kamu.length === 0 ? (
+        <p>Kosong</p>
+      ) : (
+        <>
+          {product.map((data, ind) =>
+            data.cart > 0 ? <Listnya key={ind} data={data} /> : null
+          )}
+          <div style={{ width: "100%", padding: "1rem 3rem" }}>
+            <div
+              onClick={chek}
+              style={{
+                float: "right",
+                backgroundColor: "blue",
+                padding: "0.7rem 1.5rem",
+                color: "white",
+                fontWeight: "bold",
+                borderRadius: "5px",
+              }}
+            >
+              Checkout
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};

@@ -3,7 +3,7 @@ import marketReduc from '../redux/ecom'
 import userReduc from '../redux/userredux'
 // import dataReduce from '../redux/loginredux'
 import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import { persistReducer, persistStore } from "redux-persist";
 
 
 
@@ -24,3 +24,5 @@ export const store = configureStore({
         persistedReducer
     }
 })
+
+export const persistedStore = persistStore(store);
