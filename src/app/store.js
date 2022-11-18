@@ -1,7 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import marketReduc from "../redux/ecom";
 import userReduc from "../redux/userredux";
-// import dataReduce from '../redux/loginredux'
 import storage from "redux-persist/lib/storage";
 import {
   persistReducer,
@@ -22,7 +21,6 @@ const persistConfig = {
 const reducer = combineReducers({
   ecom: marketReduc,
   user: userReduc,
-  // data: dataReduce
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

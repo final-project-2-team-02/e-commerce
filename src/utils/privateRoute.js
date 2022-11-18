@@ -3,7 +3,6 @@ import { Navigate } from "react-router-dom";
 export const PrivateRouteUser = ({ children }) => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  console.log(role);
   return token && role === "user" ? children : <Navigate to={"/"} />;
 };
 

@@ -7,16 +7,8 @@ import { addCart } from "../../../redux/ecom";
 export const ProductCard = ({ data }) => {
   const dispach = useDispatch();
   const navi = useNavigate();
-  const check = () => {
-    if (localStorage.getItem("token")) {
-      navi(`/${data.val.title}`);
-    } else {
-      navi("/login");
-    }
-  };
   const cart = () => {
     if (localStorage.getItem("token")) {
-      console.log(data.val.id);
       dispach(addCart(data.val.id));
     } else {
       navi("/login");
