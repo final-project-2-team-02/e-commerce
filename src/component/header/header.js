@@ -27,7 +27,7 @@ export const Header = () => {
             src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png"
           />
           <Link to="/login">
-            <div classNameName="avatar"></div>
+            <div className="avatar"></div>
           </Link>
         </div>
       ) : (
