@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { usdCurrency } from "../../utils/formatter";
-import "./recap.css";
+import "./salesDataPage.css";
 
-export const Recap = () => {
-  const { product } = useSelector((state) => state.persistedReducer.ecom);
+export const SalesDataPage = () => {
+  const { product } = useSelector((state) => state.ecom);
 
   return (
     <div className="recap-container">

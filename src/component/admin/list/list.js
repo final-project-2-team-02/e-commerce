@@ -4,7 +4,7 @@ import { minJumlah, addJumlah } from "../../../redux/ecom";
 
 export const List = ({ data }) => {
   const dispach = useDispatch();
-  const [kamu, setKamu] = useState(data.jumlah);
+  const [quantity, setQuantity] = useState(data.jumlah);
   return (
     <div className="content-admin">
       <div className="kiri">
@@ -35,17 +35,17 @@ export const List = ({ data }) => {
               className="btn"
               onClick={() => {
                 dispach(minJumlah(data.val.id));
-                setKamu(kamu - 1);
+                setQuantity(quantity - 1);
               }}
             >
               -
             </div>
-            <p>{kamu}</p>
+            <p>{quantity}</p>
             <div
               className="btn"
               onClick={() => {
                 dispach(addJumlah(data.val.id));
-                setKamu(kamu + 1);
+                setQuantity(quantity + 1);
               }}
             >
               +

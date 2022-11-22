@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Content } from "./component/content";
-import { Admin } from "./pages/admin";
-import { Cart } from "./pages/cart";
+import { AdminDashboard } from "./pages/AdminDashboard/AdminDashboard";
+import { CartPage } from "./pages/CartPage/CartPage";
+import { DetailsProduct } from "./pages/DetailsProduct/DetailsProduct";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { Tampil } from "./pages/coba";
 import { CobaAdmin } from "./pages/cobaAdmin";
-import { Detail } from "./pages/detail";
-import { Login } from "./pages/login";
 import { Nampil } from "./pages/nampilin";
-import { Recap } from "./pages/recap/recap";
+import { SalesDataPage } from "./pages/SalesDataPage/SalesDataPage";
 import "./style/style.css";
 import {
   PrivateRouteBlockAdmin,
@@ -29,12 +29,12 @@ function App() {
           }
         >
           <Route index element={<Content />} />
-          <Route path="/:id" element={<Detail />} />
+          <Route path="/:id" element={<DetailsProduct />} />
           <Route
             path="/cart"
             element={
               <PrivateRouteUser>
-                <Cart />
+                <CartPage />
               </PrivateRouteUser>
             }
           />
@@ -47,17 +47,17 @@ function App() {
             </PrivateRouteAdmin>
           }
         >
-          <Route index element={<Admin />} />
+          <Route index element={<AdminDashboard />} />
           <Route
             path="recap"
             element={
               <PrivateRouteAdmin>
-                <Recap />
+                <SalesDataPage />
               </PrivateRouteAdmin>
             }
           />
         </Route>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/tampil" element={<Nampil />} />
         <Route
           path="*"

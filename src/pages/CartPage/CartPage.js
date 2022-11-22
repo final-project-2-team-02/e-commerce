@@ -1,22 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { Listnya } from "../component/content/list/list";
-import { addRecap } from "../redux/ecom";
+import { Listnya } from "../../component/content/list/list";
+import { useCartPage } from "./useCartPage";
 
-export const Cart = () => {
-  const dispach = useDispatch();
-  const { product } = useSelector((state) => state.persistedReducer.ecom);
+export const CartPage = () => {
+  const { productCartItem, product, check } = useCartPage();
 
-  const kamu = product.filter((nilai) => {
-    return nilai.cart > 0;
-  });
-  const chek = () => {
-    dispach(addRecap());
-  };
   return (
     <div>
-      {kamu.length === 0 ? (
+      {productCartItem.length === 0 ? (
         <p>Kosong</p>
       ) : (
         <>
@@ -31,7 +22,7 @@ export const Cart = () => {
             }}
           >
             <div
-              onClick={chek}
+              onClick={check}
               style={{
                 float: "right",
                 backgroundColor: "#b6f719",
