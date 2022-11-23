@@ -14,17 +14,17 @@ export const LoginPage = () => {
       <div className="login">
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           name="email"
-          id=""
+          id="email"
           placeholder="email"
           onChange={(val) => setEmail(val.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input
-          type="text"
+          type="password"
           name="password"
-          id=""
+          id="password"
           placeholder="password"
           onChange={(val) => setPassword(val.target.value)}
         />
