@@ -67,7 +67,6 @@ const marketSlice = createSlice({
           action.payload.map((val) =>
             list.push({ val, jumlah: 20, cart: 0, recap: 0 })
           );
-          console.log(list);
           return { ...state, product: list, loading: false };
         } else {
           return { ...state, loading: false };

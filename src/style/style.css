@@ -617,3 +617,11 @@ a {
   height: fit-content;
   color: #141f00;
 }
+
+.navbar-menu > * {
+  margin: 0 10px;
+}
+
+div.rate p {
+  margin: 0;
+}

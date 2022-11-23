@@ -5,27 +5,27 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../../../redux/ecom";
 
 export const ProductCard = ({ data }) => {
-  const dispach = useDispatch();
-  const navi = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cart = () => {
     if (localStorage.getItem("token")) {
-      dispach(addCart(data.val.id));
+      dispatch(addCart(data.val.id));
     } else {
-      navi("/login");
+      navigate("/login");
     }
   };
 
   return (
     <div className="card">
-      <img alt="kamu" className="pict" src={data.val.image} />
+      <img className="pict" src={data.val.image} alt={data.val.title} />
       <div className="title">
         <p>{data.val.title}</p>
       </div>
       <div className="rate">
         <img
-          alt="kamu"
           src="https://img.icons8.com/ios-filled/50/FAB005/christmas-star.png"
+          alt="star icon"
         />
         <p>
           {data.val.rating.rate} | {data.val.rating.count}
@@ -37,8 +37,8 @@ export const ProductCard = ({ data }) => {
         </Link>
         <div className="cart" onClick={cart}>
           <img
-            alt="kamu"
             src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png"
+            alt="cart icon"
           />
         </div>
       </div>

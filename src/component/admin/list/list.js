@@ -5,6 +5,7 @@ import { minJumlah, addJumlah } from "../../../redux/ecom";
 export const List = ({ data }) => {
   const dispach = useDispatch();
   const [quantity, setQuantity] = useState(data.jumlah);
+  
   return (
     <div className="content-admin">
       <div className="kiri">
