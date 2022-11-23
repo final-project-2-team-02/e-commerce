@@ -26,7 +26,12 @@ const marketSlice = createSlice({
       state.product[action.payload - 1].jumlah -= 1;
     },
     addCart: (state, action) => {
-      state.product[action.payload - 1].cart += 1;
+      if (
+        state.product[action.payload - 1].cart <
+        state.product[action.payload - 1].jumlah
+      ) {
+        state.product[action.payload - 1].cart += 1;
+      }
     },
     minCart: (state, action) => {
       if (state.product[action.payload - 1].cart > 0) {
