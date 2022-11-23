@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { minJumlah, addJumlah } from "../../../redux/ecom";
+import { decStock, addStock } from "../../../redux/ecom";
 
 export const List = ({ data }) => {
   const dispach = useDispatch();
   const [quantity, setQuantity] = useState(data.jumlah);
-  
+
   return (
     <div className="content-admin">
       <div className="kiri">
@@ -35,7 +35,7 @@ export const List = ({ data }) => {
             <div
               className="btn"
               onClick={() => {
-                dispach(minJumlah(data.val.id));
+                dispach(decStock(data.val.id));
                 setQuantity(quantity - 1);
               }}
             >
@@ -45,7 +45,7 @@ export const List = ({ data }) => {
             <div
               className="btn"
               onClick={() => {
-                dispach(addJumlah(data.val.id));
+                dispach(addStock(data.val.id));
                 setQuantity(quantity + 1);
               }}
             >

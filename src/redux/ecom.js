@@ -19,10 +19,10 @@ const marketSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    addJumlah: (state, action) => {
+    addStock: (state, action) => {
       state.product[action.payload - 1].jumlah += 1;
     },
-    minJumlah: (state, action) => {
+    decStock: (state, action) => {
       state.product[action.payload - 1].jumlah -= 1;
     },
     addCart: (state, action) => {
@@ -85,8 +85,8 @@ export const {
   inputCart,
   resetCart,
   setCart,
-  addJumlah,
-  minJumlah,
+  addStock,
+  decStock,
   addRecap,
 } = marketSlice.actions;
 export default marketSlice.reducer;

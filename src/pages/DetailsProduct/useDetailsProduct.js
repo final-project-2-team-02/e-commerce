@@ -21,7 +21,9 @@ export const useDetailsProduct = () => {
   };
 
   const add = () => {
-    setValue(value + 1);
+    if (productSelected.jumlah > value) {
+      setValue(value + 1);
+    }
   };
 
   const cart = () => {
