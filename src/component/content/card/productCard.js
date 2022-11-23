@@ -32,7 +32,7 @@ export const ProductCard = ({ data }) => {
         </p>
       </div>
       <div className="button item">
-        <Link to={`/${data.val.title}`}>
+        <Link to={`product/${data.val.id}`}>
           <div className="price">$ {data.val.price}</div>
         </Link>
         <div className="cart" onClick={cart}>

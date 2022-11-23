@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { inputCart } from "../../redux/ecom";
+import { directCheckout, inputCart } from "../../redux/ecom";
 
 export const useDetailsProduct = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export const useDetailsProduct = () => {
   const { product } = useSelector((state) => state.ecom);
   const { id } = useParams();
 
-  const productSelected = product.find((pro) => pro.val.title === id);
+  const productSelected = product.find((pro) => pro.val.id === Number(id));
 
   const [value, setValue] = React.useState(productSelected.cart);
 
@@ -35,5 +35,9 @@ export const useDetailsProduct = () => {
     }
   };
 
-  return { id, value, add, min, cart, productSelected };
+  const handleDirectCheckout = () => {
+    dispatch(directCheckout({ id, qty: value }));
+  };
+
+  return { id, value, add, min, cart, productSelected, handleDirectCheckout };
 };

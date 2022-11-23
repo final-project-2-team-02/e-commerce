@@ -60,6 +60,14 @@ const marketSlice = createSlice({
         }
       });
     },
+    directCheckout: (state, action) => {
+      let selectedProduct = state.product.find(
+        (item) => item.val.id === Number(action.payload.id)
+      );
+
+      selectedProduct.jumlah -= action.payload.qty;
+      selectedProduct.recap += action.payload.qty;
+    },
   },
   extraReducers(builder) {
     builder.addCase(fetchMarket.pending, (state) => {
@@ -93,5 +101,6 @@ export const {
   addStock,
   decStock,
   addRecap,
+  directCheckout,
 } = marketSlice.actions;
 export default marketSlice.reducer;

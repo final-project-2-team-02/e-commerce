@@ -2,7 +2,8 @@ import React from "react";
 import { useDetailsProduct } from "./useDetailsProduct";
 
 export const DetailsProduct = () => {
-  const { id, value, add, cart, min, productSelected } = useDetailsProduct();
+  const { value, add, cart, min, productSelected, handleDirectCheckout } =
+    useDetailsProduct();
 
   return (
     <>
@@ -11,7 +12,7 @@ export const DetailsProduct = () => {
           <img className="pict" src={productSelected.val.image} alt="" />
         </div>
         <div className="kanan">
-          <h3>{id}</h3>
+          <h3>{productSelected.val.title}</h3>
           <div className="rate">
             <img
               alt="kamu"
@@ -52,7 +53,9 @@ export const DetailsProduct = () => {
             <div className="keranjang" onClick={cart}>
               Masukkan Keranjang
             </div>
-            <div className="belanja">Belanja Sekarang</div>
+            <div className="belanja" onClick={handleDirectCheckout}>
+              Belanja Sekarang
+            </div>
           </div>
         </div>
       </div>
