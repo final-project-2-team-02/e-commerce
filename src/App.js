@@ -22,6 +22,7 @@ import {
 
 import "./style/style.css";
 import "./App.css";
+import { Category } from "./pages/CategoryPage/category";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/women" element={<WomensClothPage />} />
           <Route path="/electronic" element={<ElectronicsPage />} />
           <Route path="/jewelry" element={<JewelryPage />} />
+          <Route path="/category/:id" element={<Category />} />
         </Route>
         <Route
           path="/admin"

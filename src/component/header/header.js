@@ -11,10 +11,10 @@ export const Header = () => {
         <h3>Tokopakedi</h3>
       </Link>
       <div className="navbar-menu">
-        <Link to="/men">Men</Link>
-        <Link to="/women">Women</Link>
-        <Link to="/electronic">Electronic</Link>
-        <Link to="/jewelry">Jewelry</Link>
+        <Link to="/category/men's clothing">Men</Link>
+        <Link to="/category/women's clothing">Women</Link>
+        <Link to="/category/electronics">Electronic</Link>
+        <Link to="/category/jewelery">Jewelry</Link>
       </div>
       {isFill ? (
         <div className="dia">
